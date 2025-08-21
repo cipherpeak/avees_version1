@@ -129,7 +129,7 @@ body {
 }
 
 .food-card-back {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background: linear-gradient(135deg, var(--color-red-600), var(--color-red-600));
   transform: rotateY(180deg);
   display: flex;
   align-items: center;
@@ -144,3 +144,5 @@ body {
   transform: translateY(-8px);
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
+
+

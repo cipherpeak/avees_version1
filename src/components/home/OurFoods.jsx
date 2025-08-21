@@ -4,10 +4,12 @@ import food1 from "../../assets/foods/RAH03819-min.JPG"
 import food2 from "../../assets/foods/RAH03836-min.JPG"
 import food3 from "../../assets/foods/RAH03850-min.JPG"
 import food4 from "../../assets/foods/RAH03857-min.JPG"
+import aveesLogo from "../../assets/logo/Avees main logo.png" // Import your logo
 
 const HotelFoodsSection = () => {
   const sectionRef = useRef(null)
   const isInView = useInView(sectionRef, { once: false, amount: 0.3 })
+  const [activeCard, setActiveCard] = useState(null)
 
   const foodItems = [
     {
@@ -32,11 +34,19 @@ const HotelFoodsSection = () => {
     },
   ]
 
+  const handleCardClick = (id) => {
+    if (activeCard === id) {
+      setActiveCard(null)
+    } else {
+      setActiveCard(id)
+    }
+  }
+
   // Animation variants for the cards
   const cardVariants = {
     hidden: { 
       opacity: 0, 
-      x: 100, // Start from the right
+      x: 100,
       transition: {
         duration: 0.5,
         ease: "easeOut"
@@ -44,7 +54,7 @@ const HotelFoodsSection = () => {
     },
     visible: { 
       opacity: 1, 
-      x: 0, // End at normal position
+      x: 0,
       transition: {
         duration: 0.7,
         ease: "easeOut"
@@ -52,7 +62,7 @@ const HotelFoodsSection = () => {
     },
     exit: {
       opacity: 0,
-      x: -100, // Exit to the left
+      x: -100,
       transition: {
         duration: 0.5,
         ease: "easeIn"
@@ -66,14 +76,14 @@ const HotelFoodsSection = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15, // Delay between each card animation
+        staggerChildren: 0.15,
       }
     },
     exit: {
       opacity: 0,
       transition: {
         staggerChildren: 0.1,
-        staggerDirection: -1, // Reverse order for exit
+        staggerDirection: -1,
       }
     }
   }
@@ -101,29 +111,37 @@ const HotelFoodsSection = () => {
           className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8"
           variants={containerVariants}
         >
-          {foodItems.map((item, index) => (
+          {foodItems.map((item) => (
             <motion.div
               key={item.id}
               variants={cardVariants}
               whileHover={{ 
-                scale: 1.05,
+                scale: activeCard !== item.id ? 1.05 : 1,
                 transition: { duration: 0.2 }
               }}
-              className="food-card shadow-lg relative h-64 overflow-hidden group"
+              className="food-card shadow-lg relative h-64 overflow-hidden group cursor-pointer"
+              onClick={() => handleCardClick(item.id)}
             >
-              <div className="food-card-inner w-full h-full">
+              <div className={`food-card-inner w-full h-full transition-transform duration-500 ${activeCard === item.id ? 'rotate-y-180' : ''}`}>
                 {/* Front of card - Full image */}
-                <div className="food-card-front absolute inset-0 w-full h-full">
+                <div className="food-card-front absolute inset-0 w-full h-full backface-hidden">
                   <img 
                     src={item.image || "/placeholder.svg"} 
                     alt={item.name} 
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                    className="w-full h-full object-cover" 
                   />
                 </div>
 
-                {/* Back of card - Name only */}
-                <div className="food-card-back absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  <h3 className="text-2xl font-bold text-primary-foreground text-center px-4 font-sans">{item.name}</h3>
+                {/* Back of card - Red background with name and logo */}
+                <div className="food-card-back absolute inset-0 backface-hidden bg-red-600 flex flex-col items-center justify-center p-4 rotate-y-180">
+                  <div className="absolute top-2 right-2 w-10 h-10">
+                    <img 
+                      src={aveesLogo || "/placeholder.svg"} 
+                      alt="Avees Logo" 
+                      className="w-full h-full object-contain" 
+                    />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white text-center font-sans">{item.name}</h3>
                 </div>
               </div>
             </motion.div>
