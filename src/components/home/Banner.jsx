@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Globe, Truck, ShoppingBag, Tag, Wheat } from "lucide-react";
 
 // Import all your banner images
@@ -39,10 +39,11 @@ function Banner() {
   const duplicatedItems = [...featureItems, ...featureItems];
 
   // Separate banners for mobile/tablet and desktop
-  const mobileBanners = [ mobileBanner2, mobileBanner3,mobileBanner1];
-  const desktopBanners = [desktopBanner2,desktopBanner3, desktopBanner1 ];
+  const mobileBanners = [mobileBanner2, mobileBanner3, mobileBanner1];
+  const desktopBanners = [desktopBanner2, desktopBanner3, desktopBanner1];
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  const [direction, setDirection] = useState(0); // 0: forward, 1: backward
 
   // Check screen size on mount and resize
   useEffect(() => {
@@ -59,10 +60,12 @@ function Banner() {
   const banners = isMobile ? mobileBanners : desktopBanners;
 
   const nextSlide = () => {
+    setDirection(0); // Forward direction
     setCurrentSlide((prev) => (prev + 1) % banners.length);
   };
 
   const goToSlide = (index) => {
+    setDirection(index > currentSlide ? 0 : 1); // Set direction based on navigation
     setCurrentSlide(index);
   };
 
@@ -73,30 +76,47 @@ function Banner() {
 
   // Animation variants for the banner
   const bannerVariants = {
-    enter: { opacity: 0 },
-    center: { opacity: 1 },
-    exit: { opacity: 0 }
+    enter: (direction) => ({
+      opacity: 0,
+      x: direction === 0 ? 300 : -300
+    }),
+    center: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.7
+      }
+    },
+    exit: (direction) => ({
+      opacity: 0,
+      x: direction === 0 ? -300 : 300,
+      transition: {
+        duration: 0.7
+      }
+    })
   };
 
   return (
     <div className="w-full overflow-hidden">
-      <div className="relative w-full">
-        <AnimatePresence mode="wait">
-          <motion.img
-            key={currentSlide}
+      <div className="relative w-full h-[50vh] md:h-[70vh] lg:h-[80vh]">
+        <motion.div
+          key={currentSlide}
+          custom={direction}
+          variants={bannerVariants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          className="absolute inset-0 w-full h-full"
+        >
+          <img
             src={banners[currentSlide]}
             alt="Banner"
             className="w-full h-full object-cover object-center"
-            variants={bannerVariants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            transition={{ duration: 0.7 }}
           />
-        </AnimatePresence>
+        </motion.div>
 
         {/* Navigation Dots */}
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
           {banners.map((_, index) => (
             <motion.span
               key={index}
