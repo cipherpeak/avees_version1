@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+
+/* In your CSS */
+body {
+  font-family: 'Gotham', sans-serif;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.scrolling-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.scrolling-content {
+  display: flex;
+  animation: scroll 20s linear infinite;
+  width: max-content;
+}
+
+/* .scrolling-content:hover {
+  animation-play-state: paused;
+} */
+
+.scrolling-content > * {
+  flex-shrink: 0;
+}
+
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fade-out-down {
+  animation: fadeOutDown 0.4s ease-in forwards;
+}
+
+/* Updated animations for right-to-left motion and 3D card flip effects */
+@keyframes fadeInRightToLeft {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeOutLeftToRight {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+}
+
+.animate-fade-in-right-to-left {
+  animation: fadeInRightToLeft 0.8s ease-out forwards;
+}
+
+.animate-fade-out-left-to-right {
+  animation: fadeOutLeftToRight 0.6s ease-in forwards;
+}
+
+/* Added 3D flip card styles for hover rotation effect */
+.food-card {
+  perspective: 1000px;
+  height: 300px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.food-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.food-card:hover .food-card-inner {
+  transform: rotateY(180deg);
+}
+
+.food-card-front,
+.food-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.food-card-back {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-hover-effect {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover-effect:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
