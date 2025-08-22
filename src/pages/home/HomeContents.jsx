@@ -14,8 +14,8 @@ function HomeContents() {
         <Banner/>
         <Products/>
         <BatterSec/>
-        <HotelFoodsSection/>
         <AveesSpecials/>
+        <HotelFoodsSection/>
         <OurStory/>
         <AdsVideos/>
         {/* <OurBrands/> */}

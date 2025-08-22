@@ -26,7 +26,7 @@ export default function BatterSec() {
 
   const [activeIndex, setActiveIndex] = useState(0);
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
+  const isInView = useInView(sectionRef, { once: true, amount: 0.1 });
 
   const titleVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -80,7 +80,7 @@ export default function BatterSec() {
           animate={isInView ? "visible" : "hidden"}
         >
           <div className="mb-6 md:mb-8">
-            <TextHoverEffect text="AVEES BATTERS" duration={0.3} />
+            <TextHoverEffect text="AVEES  BATTERS" duration={0.3} />
           </div>
           
           <motion.p
