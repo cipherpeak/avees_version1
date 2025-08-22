@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import desktopBanner from "../../assets/aveesspecial/train go away.gif";
-import tabletBanner from "../../assets/aveesspecial/PHONE BANNER 06.webp";
-import mobileBanner from "../../assets/aveesspecial/PHONE BANNER 06.webp";
+import desktopBanner from "../../assets/aveesspecial/BANNER Re.gif";
+import tabletBanner from "../../assets/aveesspecial/PHONE BANNER Re.gif";
+import mobileBanner from "../../assets/aveesspecial/PHONE BANNER Re.gif";
 
 export default function AveesSpecials() {
   // State to track current screen size

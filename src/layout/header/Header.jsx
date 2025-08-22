@@ -6,19 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { IoMdPricetags } from "react-icons/io";
 import { FiMenu, FiX } from "react-icons/fi";
 
-// Sample images - replace with your actual imports
-import retailImg from "../../assets/logo/Avees logo red.png";
-import manufacturingImg from "../../assets/logo/Avees logo red.png";
-import technologyImg from "../../assets/logo/Avees logo red.png";
-import healthcareImg from "../../assets/logo/Avees logo red.png";
-import historyImg from "../../assets/logo/Avees logo red.png";
-import farmingImg from "../../assets/logo/Avees logo red.png";
-import investmentImg from "../../assets/logo/Avees logo red.png";
-import partnershipImg from "../../assets/logo/Avees logo red.png";
-import franchisingImg from "../../assets/logo/Avees logo red.png";
-import jointVentureImg from "../../assets/logo/Avees logo red.png";
-import photosImg from "../../assets/logo/Avees logo red.png";
-import videosImg from "../../assets/logo/Avees logo red.png";
+
 
 function Header() {
   const [activeDropdown, setActiveDropdown] = useState(null);
@@ -28,35 +16,6 @@ function Header() {
     {
       name: "Home",
       link: "/",
-    },
-    {
-      name: "Our Businesses",
-      dropdown: [
-        { 
-          name: "Retail", 
-          link: "#",
-          image: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-          description: "Explore our retail operations and stores"
-        },
-        { 
-          name: "Manufacturing", 
-          link: "#",
-          image: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-          description: "Our manufacturing facilities and capabilities"
-        },
-        { 
-          name: "Technology", 
-          link: "#",
-          image: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-          description: "Innovative tech solutions we provide"
-        },
-        { 
-          name: "Healthcare", 
-          link: "#",
-          image: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-          description: "Our healthcare services and facilities"
-        },
-      ],
     },
     {
       name: "About Us",
@@ -76,50 +35,79 @@ function Header() {
       ],
     },
     {
+      name: "Our Businesses",
+      // dropdown: [
+      //   { 
+      //     name: "Retail", 
+      //     link: "#",
+      //     image: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      //     description: "Explore our retail operations and stores"
+      //   },
+      //   { 
+      //     name: "Manufacturing", 
+      //     link: "#",
+      //     image: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      //     description: "Our manufacturing facilities and capabilities"
+      //   },
+      //   { 
+      //     name: "Technology", 
+      //     link: "#",
+      //     image: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      //     description: "Innovative tech solutions we provide"
+      //   },
+      //   { 
+      //     name: "Healthcare", 
+      //     link: "#",
+      //     image: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      //     description: "Our healthcare services and facilities"
+      //   },
+      // ],
+    },
+    {
       name: "Opportunities",
-      dropdown: [
-        { 
-          name: "Investments", 
-          link: "#",
-          image: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-          description: "Investment opportunities with us"
-        },
-        { 
-          name: "Partnerships", 
-          link: "#",
-          image: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-          description: "Strategic partnership options"
-        },
-        { 
-          name: "Franchising", 
-          link: "#",
-          image: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-          description: "Franchise our successful models"
-        },
-        { 
-          name: "Joint Ventures", 
-          link: "#",
-          image: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-          description: "Collaborate through joint ventures"
-        },
-      ],
+      // dropdown: [
+      //   { 
+      //     name: "Investments", 
+      //     link: "#",
+      //     image: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      //     description: "Investment opportunities with us"
+      //   },
+      //   { 
+      //     name: "Partnerships", 
+      //     link: "#",
+      //     image: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      //     description: "Strategic partnership options"
+      //   },
+      //   { 
+      //     name: "Franchising", 
+      //     link: "#",
+      //     image: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      //     description: "Franchise our successful models"
+      //   },
+      //   { 
+      //     name: "Joint Ventures", 
+      //     link: "#",
+      //     image: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      //     description: "Collaborate through joint ventures"
+      //   },
+      // ],
     },
     {
       name: "Gallery",
-      dropdown: [
-        { 
-          name: "Photos", 
-          link: "#",
-          image: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-          description: "Browse our photo collections"
-        },
-        { 
-          name: "Videos", 
-          link: "#",
-          image: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-          description: "Watch our corporate videos"
-        },
-      ],
+      // dropdown: [
+      //   { 
+      //     name: "Photos", 
+      //     link: "#",
+      //     image: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      //     description: "Browse our photo collections"
+      //   },
+      //   { 
+      //     name: "Videos", 
+      //     link: "#",
+      //     image: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      //     description: "Watch our corporate videos"
+      //   },
+      // ],
     },
   ];
 
@@ -241,28 +229,29 @@ function Header() {
                         variants={dropdownVariants}
                       >
                         <div className="max-w-7xl mx-auto px-4 py-6">
-                          <div className="grid grid-cols-4 gap-8">
+                          <div className="grid grid-cols-2 gap-8">
                             {item.dropdown.map((subItem, subIndex) => (
                               <motion.a
                                 key={subIndex}
                                 href={subItem.link}
-                                className="group flex gap-4 items-start"
+                                className="group relative h-80 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
                                 variants={itemVariants}
                               >
-                                <div className="flex-1">
-                                  <h3 className="font-medium text-gray-900 group-hover:text-red-600 transition-colors">
+                                {/* Background image with dark overlay */}
+                                <div 
+                                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                                  style={{ backgroundImage: `url(${subItem.image})` }}
+                                >
+                                </div>
+                                
+                                {/* Text content */}
+                                <div className="absolute inset-0 flex flex-col justify-end p-4 text-white">
+                                  <h3 className="font-bold text-lg mb-1 group-hover:text-red-300 transition-colors">
                                     {subItem.name}
                                   </h3>
-                                  <p className="text-sm text-gray-500 mt-1">
+                                  <p className="text-sm opacity-90 group-hover:opacity-100 transition-opacity">
                                     {subItem.description}
                                   </p>
-                                </div>
-                                <div className="w-full h-full rounded-md overflow-hidden">
-                                  <img 
-                                    src={subItem.image} 
-                                    alt={subItem.name}
-                                    className="w-full h-full object-cover transition-transform group-hover:scale-105" 
-                                  />
                                 </div>
                               </motion.a>
                             ))}
