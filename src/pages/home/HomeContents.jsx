@@ -5,7 +5,7 @@ import OurStory from '../../components/home/OurStory'
 import AveesSpecials from '../../components/home/AveesSpecials'
 import OurBrands from '../../components/home/Brands'
 import Banner from '../../components/home/Banner'
-// import BatterSec from '../../components/home/Batter'
+import BatterSec from '../../components/home/Batter'
 import HotelFoodsSection from '../../components/home/OurFoods'
 
 function HomeContents() {
@@ -13,9 +13,9 @@ function HomeContents() {
     <div>
         <Banner/>
         <Products/>
+        <BatterSec/>
         <HotelFoodsSection/>
         <AveesSpecials/>
-        {/* <BatterSec/> */}
         <OurStory/>
         <AdsVideos/>
         {/* <OurBrands/> */}

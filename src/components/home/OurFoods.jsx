@@ -144,19 +144,26 @@ const HotelFoodsSection = () => {
       variants={containerVariants}
     >
       <div className="max-w-7xl mx-auto">
-        {/* Section Header with Motion */}
+        {/* Section Header with Motion - Updated to match OurStory component */}
         <motion.div className="text-center mb-16" variants={containerVariants}>
-          <motion.h2 variants={headerVariants}>
-            <TextHoverEffect text={"AVEES FOODS"} duration={0.3} />
-          </motion.h2>
-
-          <motion.div
-            className="w-24 h-1 bg-primary mx-auto mb-6"
-            variants={dividerVariants}
-          ></motion.div>
+          <motion.div 
+            className="inline-block mb-4"
+            variants={headerVariants}
+          >
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold inline-block relative">
+              AVEES FOODS
+              <motion.span 
+                className="absolute -bottom-2 left-0 h-1 bg-red-600"
+                initial={{ width: 0 }}
+                whileInView={{ width: "100%" }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+              />
+            </h1>
+          </motion.div>
 
           <motion.p
-            className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed"
+            className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed mt-8"
             variants={descriptionVariants}
           >
             Experience our chef's signature dishes crafted with the finest

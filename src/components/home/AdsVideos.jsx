@@ -1,11 +1,15 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import first from "../../assets/adsvdo/AVEES RECIPE FINAL V2.mp4"
+import second from "../../assets/adsvdo/AVEES RESTAURANT FINAL.mp4"
+import third from "../../assets/adsvdo/Duck mappaas.mp4"
+import four from "../../assets/adsvdo/Karimeen Thekathu.mp4"
 
 export default function AdsVideos() {
   const products = [
     {
       id: 1,
-      youtubeShortId: "Ky6Lc3Gn1Kc", 
+      videoSrc: first, // Changed from YouTube ID to local path
       videoPoster: "/videos/kokum-rasam-poster.png",
       overlayTitle: "Kokum Rasam",
       productIcon: "/icons/kokum-rind-icon.png",
@@ -18,7 +22,7 @@ export default function AdsVideos() {
     },
     {
       id: 2,
-      youtubeShortId: "Ug2PsbU-2X0",
+      videoSrc: four, // Changed from YouTube ID to local path
       videoPoster: "/videos/kokum-rind-powder-poster.png",
       overlayTitle: null,
       productIcon: "/icons/kokum-powder-icon.png",
@@ -31,8 +35,8 @@ export default function AdsVideos() {
     },
     {
       id: 3,
-      youtubeShortId: "TP_3I27H4Ng",
-      videoPoster: "/videos/unsalted-peanuts-poster.png",
+      videoSrc: third, // Changed from YouTube ID to local path
+      videoPoster: four,
       overlayTitle: null,
       productIcon: "/icons/roasted-peanuts-icon.png",
       productName: "Urban Platter Roasted Unsalted Peanuts, 1kg",
@@ -44,7 +48,7 @@ export default function AdsVideos() {
     },
     {
       id: 4,
-      youtubeShortId: "ROq7qXzrynk",
+      videoSrc: second, // Changed from YouTube ID to local path
       videoPoster: "/videos/fysh-sauce-poster.png",
       overlayTitle: null,
       productIcon: "/icons/fysh-sauce-icon.png",
@@ -59,31 +63,31 @@ export default function AdsVideos() {
 
   // Reference and inView hook for the entire section
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: false, amount: 0.05 }); // Reduced to 5% visibility threshold
+  const isInView = useInView(sectionRef, { once: false, amount: 0.05 });
 
   // Animation variants for the cards
   const cardVariants = {
     hidden: { 
       opacity: 0, 
-      y: 50, // Changed from x:100 to y:50 for vertical entrance
+      y: 50,
       transition: {
-        duration: 0.4, // Reduced duration for faster animation
+        duration: 0.4,
         ease: "easeOut"
       }
     },
     visible: { 
       opacity: 1, 
-      y: 0, // End at normal position
+      y: 0,
       transition: {
-        duration: 0.6, // Reduced duration for faster animation
+        duration: 0.6,
         ease: "easeOut"
       }
     },
     exit: {
       opacity: 0,
-      y: -50, // Changed from x:-100 to y:-50 for vertical exit
+      y: -50,
       transition: {
-        duration: 0.4, // Reduced duration for faster animation
+        duration: 0.4,
         ease: "easeIn"
       }
     }
@@ -95,14 +99,14 @@ export default function AdsVideos() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1, // Reduced delay between each card animation
+        staggerChildren: 0.1,
       }
     },
     exit: {
       opacity: 0,
       transition: {
-        staggerChildren: 0.08, // Reduced delay for exit
-        staggerDirection: -1, // Reverse order for exit
+        staggerChildren: 0.08,
+        staggerDirection: -1,
       }
     }
   };
@@ -124,28 +128,44 @@ export default function AdsVideos() {
         {products.map((product) => (
           <motion.div 
             key={product.id} 
-            className="relative bg-white rounded-lg shadow-md overflow-hidden"
+            className="relative bg-white rounded-lg shadow-md overflow-hidden group"
             variants={cardVariants}
             whileHover={{ 
               scale: 1.03,
               transition: { duration: 0.2 }
             }}
           >
-            {/* Changed aspect ratio from [3/4] to [9/16] for taller cards */}
             <div className="relative w-full aspect-[9/16] overflow-hidden">
-              <iframe
+              {/* Video element with controls and auto-play */}
+              <video
                 className="absolute inset-0 w-full h-full object-cover"
-                src={`https://www.youtube.com/embed/${product.youtubeShortId}?autoplay=1&mute=1&loop=1&controls=0&modestbranding=1&rel=0&playlist=${product.youtubeShortId}`}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                title={product.productName}
-                loading="lazy"
-              ></iframe>
+                poster={product.videoPoster}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+              >
+                <source src={product.videoSrc} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
               
+              {/* Optional: Add a play button overlay for better UX */}
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="bg-black bg-opacity-40 rounded-full p-2">
+                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </div>
+              </div>
             </div>
             
-  
+            {/* Product info overlay (if needed) */}
+            {product.overlayTitle && (
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4 text-white">
+                <h3 className="font-bold text-lg">{product.overlayTitle}</h3>
+              </div>
+            )}
           </motion.div>
         ))}
       </motion.div>
