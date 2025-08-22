@@ -36,8 +36,8 @@ function OurStory() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.5,
-        delayChildren: 0.3
+        staggerChildren: 0.3, // Reduced stagger time for faster animation
+        delayChildren: 0.1    // Reduced delay for faster animation
       }
     },
     exit: {
@@ -52,23 +52,23 @@ function OurStory() {
   const imageVariants = {
     hidden: { 
       opacity: 0, 
-      x: 300,
-      scale: 1.2 
+      x: 100,        // Reduced starting distance for faster appearance
+      scale: 1.1     // Reduced scale for faster appearance
     },
     visible: {
       opacity: 1,
       x: 0,
       scale: 1,
       transition: {
-        duration: 1.2,
+        duration: 0.8, // Reduced duration for faster animation
         ease: "easeOut"
       }
     },
     exit: {
       opacity: 0,
-      x: -300, // Exit to the left
+      x: -100,       // Reduced exit distance for faster disappearance
       transition: {
-        duration: 0.8,
+        duration: 0.6, // Reduced duration for faster animation
         ease: "easeIn"
       }
     }
@@ -81,15 +81,15 @@ function OurStory() {
     visible: {
       opacity: 0.3,
       transition: {
-        delay: 0.8,
-        duration: 0.8,
+        delay: 0.4,   // Reduced delay for faster animation
+        duration: 0.6, // Reduced duration for faster animation
         ease: "easeOut"
       }
     },
     exit: {
       opacity: 0,
       transition: {
-        duration: 0.5,
+        duration: 0.4, // Reduced duration for faster animation
         ease: "easeIn"
       }
     }
@@ -98,22 +98,22 @@ function OurStory() {
   const contentVariants = {
     hidden: { 
       opacity: 0, 
-      x: -300
+      x: -100        // Reduced starting distance for faster appearance
     },
     visible: {
       opacity: 1,
       x: 0,
       transition: {
-        delay: 1.0,
-        duration: 1.0,
+        delay: 0.5,   // Reduced delay for faster animation
+        duration: 0.7, // Reduced duration for faster animation
         ease: "easeOut"
       }
     },
     exit: {
       opacity: 0,
-      x: -300, // Exit to the left
+      x: -100,       // Reduced exit distance for faster disappearance
       transition: {
-        duration: 0.7,
+        duration: 0.5, // Reduced duration for faster animation
         ease: "easeIn"
       }
     }
@@ -122,21 +122,21 @@ function OurStory() {
   const itemVariants = {
     hidden: { 
       opacity: 0, 
-      y: 50
+      y: 30         // Reduced starting distance for faster appearance
     },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.8,
+        duration: 0.6, // Reduced duration for faster animation
         ease: "easeOut"
       }
     },
     exit: {
       opacity: 0,
-      y: 50, // Exit downward
+      y: 30,        // Reduced exit distance for faster disappearance
       transition: {
-        duration: 0.6,
+        duration: 0.4, // Reduced duration for faster animation
         ease: "easeIn"
       }
     }
@@ -157,7 +157,7 @@ function OurStory() {
       initial="hidden"
       whileInView="visible"
       exit="exit"
-      viewport={{ once: false, amount: 0.5 }} // Changed once to false
+      viewport={{ once: false, amount: 0.05 }} // Reduced to 5% visibility threshold
       variants={containerVariants}
     >
       {/* Background Image */}
@@ -190,8 +190,9 @@ function OurStory() {
             <motion.span 
               className="absolute -bottom-2 sm:-bottom-3 left-0 h-1 bg-red-600"
               initial={{ width: 0 }}
-              animate={{ width: "100%" }}
-              transition={{ delay: 2.5, duration: 1.2 }}
+              whileInView={{ width: "100%" }}
+              viewport={{ amount: 0.05 }} // Match the section's threshold
+              transition={{ delay: 0.8, duration: 0.8 }} // Reduced delay and duration
             />
           </h1>
         </motion.div>

@@ -53,7 +53,7 @@ function Products() {
       initial="hidden"
       whileInView="visible"
       exit="exit"
-      viewport={{ once: false, amount: 0.4 }} // Changed once to false
+      viewport={{ once: false, amount: 0.05 }} // triggers when just 5% is visible
       variants={containerVariants}
     >
       {/* Background Image - Animates first from right to left */}

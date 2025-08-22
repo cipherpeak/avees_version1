@@ -59,31 +59,31 @@ export default function AdsVideos() {
 
   // Reference and inView hook for the entire section
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: false, amount: 0.3 });
+  const isInView = useInView(sectionRef, { once: false, amount: 0.05 }); // Reduced to 5% visibility threshold
 
   // Animation variants for the cards
   const cardVariants = {
     hidden: { 
       opacity: 0, 
-      x: 100, // Start from the right
+      y: 50, // Changed from x:100 to y:50 for vertical entrance
       transition: {
-        duration: 0.5,
+        duration: 0.4, // Reduced duration for faster animation
         ease: "easeOut"
       }
     },
     visible: { 
       opacity: 1, 
-      x: 0, // End at normal position
+      y: 0, // End at normal position
       transition: {
-        duration: 0.7,
+        duration: 0.6, // Reduced duration for faster animation
         ease: "easeOut"
       }
     },
     exit: {
       opacity: 0,
-      x: -100, // Exit to the left
+      y: -50, // Changed from x:-100 to y:-50 for vertical exit
       transition: {
-        duration: 0.5,
+        duration: 0.4, // Reduced duration for faster animation
         ease: "easeIn"
       }
     }
@@ -95,13 +95,13 @@ export default function AdsVideos() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15, // Delay between each card animation
+        staggerChildren: 0.1, // Reduced delay between each card animation
       }
     },
     exit: {
       opacity: 0,
       transition: {
-        staggerChildren: 0.1,
+        staggerChildren: 0.08, // Reduced delay for exit
         staggerDirection: -1, // Reverse order for exit
       }
     }

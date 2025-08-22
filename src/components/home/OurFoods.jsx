@@ -4,11 +4,11 @@ import food1 from "../../assets/foods/RAH03819-min.JPG"
 import food2 from "../../assets/foods/RAH03836-min.JPG"
 import food3 from "../../assets/foods/RAH03850-min.JPG"
 import food4 from "../../assets/foods/RAH03857-min.JPG"
-import aveesLogo from "../../assets/logo/Avees main logo.png" // Import your logo
+import aveesLogo from "../../assets/logo/Avees main logo.png" 
 
 const HotelFoodsSection = () => {
   const sectionRef = useRef(null)
-  const isInView = useInView(sectionRef, { once: false, amount: 0.3 })
+  const isInView = useInView(sectionRef, { once: false, amount: 0.05 })
   const [activeCard, setActiveCard] = useState(null)
 
   const foodItems = [

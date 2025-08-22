@@ -80,7 +80,7 @@ export default function AveesSpecials() {
       initial="hidden"
       whileInView="visible"
       exit="exit"
-      viewport={{ once: false, amount: 0.4 }}
+      viewport={{ once: false, amount: 0.05 }}
       onViewportEnter={() => setIsInView(true)}
       onViewportLeave={() => setIsInView(false)}
       variants={containerVariants}
