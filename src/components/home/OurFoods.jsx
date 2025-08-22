@@ -88,6 +88,52 @@ const HotelFoodsSection = () => {
     }
   }
 
+  // Header animation variants
+  const headerVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 50 
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut"
+      }
+    }
+  }
+
+  const dividerVariants = {
+    hidden: { 
+      width: 0 
+    },
+    visible: { 
+      width: "6rem",
+      transition: {
+        duration: 0.8,
+        delay: 0.3,
+        ease: "easeOut"
+      }
+    }
+  }
+
+  const descriptionVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 20 
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.6,
+        delay: 0.6,
+        ease: "easeOut"
+      }
+    }
+  }
+
   return (
     <motion.section 
       ref={sectionRef}
@@ -97,15 +143,31 @@ const HotelFoodsSection = () => {
       variants={containerVariants}
     >
       <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 font-sans">Culinary Excellence</h2>
-          <div className="w-24 h-1 bg-primary mx-auto mb-6"></div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+        {/* Section Header with Motion */}
+        <motion.div 
+          className="text-center mb-16"
+          variants={containerVariants}
+        >
+          <motion.h2 
+            className="text-4xl md:text-9xl font-bold text-foreground mb-4"
+            variants={headerVariants}
+          >
+            CULINARY EXCELLENCE
+          </motion.h2>
+          
+          <motion.div 
+            className="w-24 h-1 bg-primary mx-auto mb-6"
+            variants={dividerVariants}
+          ></motion.div>
+          
+          <motion.p 
+            className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed"
+            variants={descriptionVariants}
+          >
             Experience our chef's signature dishes crafted with the finest ingredients and presented with artistic flair
             in our elegant dining atmosphere.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         <motion.div 
           className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8"
