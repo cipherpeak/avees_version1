@@ -10,7 +10,7 @@ import { FiMenu, FiX } from "react-icons/fi";
 
 function Header() {
   const [activeDropdown, setActiveDropdown] = useState(null);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  // const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
     {
@@ -19,20 +19,20 @@ function Header() {
     },
     {
       name: "About Us",
-      dropdown: [
-        { 
-          name: "Company History", 
-          link: "/company-history",
-          image: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-          description: "Learn about our journey and milestones"
-        },
-        { 
-          name: "Farming", 
-          link: "#",
-          image: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-          description: "Our agricultural initiatives and farms"
-        },
-      ],
+      // dropdown: [
+      //   { 
+      //     name: "Company History", 
+      //     link: "/company-history",
+      //     image: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      //     description: "Learn about our journey and milestones"
+      //   },
+      //   { 
+      //     name: "Farming", 
+      //     link: "#",
+      //     image: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      //     description: "Our agricultural initiatives and farms"
+      //   },
+      // ],
     },
     {
       name: "Our Businesses",
@@ -163,9 +163,9 @@ function Header() {
         <div className="flex items-center gap-4">
           <button 
             className="md:hidden text-gray-700"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            // onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            {mobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+            {/* {mobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />} */}
           </button>
           <img
             src={logo}
@@ -271,7 +271,7 @@ function Header() {
       </div>
 
       {/* Mobile Navigation */}
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div 
             className="md:hidden bg-white w-full border-t"
@@ -360,7 +360,7 @@ function Header() {
             </nav>
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence> */}
     </header>
   );
 }

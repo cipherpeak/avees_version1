@@ -39,7 +39,7 @@ function Products() {
     },
     exit: {
       opacity: 0,
-      x: -300, // Exit to the left
+      x: -300, 
       transition: {
         duration: 0.8,
         ease: "easeIn"

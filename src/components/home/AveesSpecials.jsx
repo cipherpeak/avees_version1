@@ -93,7 +93,7 @@ export default function AveesSpecials() {
       />
 
 <div className="absolute bottom-2 lg:bottom-8 w-full flex justify-center z-10">
-  <button className="lg:px-6 lg:py-3 px-4 py-1 bg-red-600 text-white border border-red-600 text-sm md:text-xl font-bold rounded-full shadow-xl hover:scale-105 transition-transform duration-300">
+  <button className="lg:px-6 lg:py-3 px-4 py-1 cursor-pointer bg-red-600 text-white border border-red-600 text-sm md:text-xl font-bold rounded-full shadow-xl hover:scale-105 transition-transform duration-300">
     Explore Our Puttu
   </button>
 </div>

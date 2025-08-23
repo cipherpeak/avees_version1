@@ -119,7 +119,7 @@ export default function AdsVideos() {
       animate={isInView ? "visible" : "exit"}
       variants={containerVariants}
     >
-      <h2 className="text-center text-2xl md:text-4xl font-bold text-black mb-8 md:mb-12">SHOP THE BEST</h2>
+      <h2 className="text-center text-2xl md:text-4xl font-bold text-black mb-8 md:mb-12">RESTAURANT QUALITY AT HOME</h2>
       
       <motion.div 
         className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto"

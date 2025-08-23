@@ -5,7 +5,7 @@ import food2 from "../../assets/foods/RAH03836-min.JPG";
 import food3 from "../../assets/foods/RAH03850-min.JPG";
 import food4 from "../../assets/foods/RAH03857-min.JPG";
 import aveesLogo from "../../assets/logo/Avees main logo.png";
-import { Star } from "lucide-react"; 
+import { Star } from "lucide-react";
 
 const HotelFoodsSection = () => {
   const sectionRef = useRef(null);
@@ -17,29 +17,29 @@ const HotelFoodsSection = () => {
       id: 1,
       name: "Grilled Salmon Fillet",
       image: food4,
-      rating: 4.8,
-      description: "Fresh salmon with herbs and lemon butter sauce"
+      rating: 5,
+      description: "Fresh salmon with herbs and lemon butter sauce",
     },
     {
       id: 2,
       name: "Beef Wellington",
       image: food1,
-      rating: 4.9,
-      description: "Prime beef tenderloin wrapped in puff pastry"
+      rating: 5,
+      description: "Prime beef tenderloin wrapped in puff pastry",
     },
     {
       id: 3,
       name: "Lobster Thermidor",
       image: food2,
-      rating: 4.7,
-      description: "Lobster cooked in a rich cream sauce with cheese"
+      rating: 5,
+      description: "Lobster cooked in a rich cream sauce with cheese",
     },
     {
       id: 4,
       name: "Truffle Risotto",
       image: food3,
-      rating: 4.6,
-      description: "Creamy arborio rice with black truffle and parmesan"
+      rating: 5,
+      description: "Creamy arborio rice with black truffle and parmesan",
     },
   ];
 
@@ -154,13 +154,10 @@ const HotelFoodsSection = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section Header with Motion - Updated to match OurStory component */}
         <motion.div className="text-center mb-16" variants={containerVariants}>
-          <motion.div 
-            className="inline-block mb-4"
-            variants={headerVariants}
-          >
+          <motion.div className="inline-block mb-4" variants={headerVariants}>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold inline-block relative">
               AVEES FOODS
-              <motion.span 
+              <motion.span
                 className="absolute -bottom-2 left-0 h-1 bg-red-600"
                 initial={{ width: 0 }}
                 whileInView={{ width: "100%" }}
@@ -174,12 +171,14 @@ const HotelFoodsSection = () => {
             className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed mt-8"
             variants={descriptionVariants}
           >
-            Experience our chef's signature dishes crafted with the finest
-            ingredients and presented with artistic flair in our elegant dining
-            atmosphere. Lorem ipsum dolor, sit amet consectetur adipisicing
-            elit. Qui facere velit tempora iure nihil saepe dicta nisi numquam
-            quia ipsa? Ratione iste error amet, officiis repudiandae
-            consequuntur unde laudantium neque.
+            Avees has in store for you a number of highly sought after
+            delicacies of Kuttanad. They are handpicked from a region which has
+            a unique geography - it lies several feet below the sea level - and
+            owns a distinct culinary culture, which evolved in a setting of
+            fresh water lakes, rivers and canals. Agricultural crops, fish and
+            water - birds from the surrounding region have been freshly gathered
+            and turned into exquisite cuisine in the Avees Kitchen, also known
+            for maintaining the highest standards of cleanliness and hygiene.
           </motion.p>
         </motion.div>
 
@@ -211,7 +210,9 @@ const HotelFoodsSection = () => {
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                    <h3 className="text-white font-bold text-lg">{item.name}</h3>
+                    <h3 className="text-white font-bold text-lg">
+                      {item.name}
+                    </h3>
                   </div>
                 </div>
 
@@ -224,15 +225,15 @@ const HotelFoodsSection = () => {
                       className="w-full h-full object-contain"
                     />
                   </div>
-                  
+
                   <h3 className="text-2xl font-bold text-white text-center font-sans mb-2">
                     {item.name}
                   </h3>
-                  
+
                   <p className="text-white text-center text-sm mb-4">
                     {item.description}
                   </p>
-                  
+
                   {/* Rating display */}
                   <div className="flex items-center mb-4">
                     {[...Array(5)].map((_, i) => (
@@ -246,18 +247,20 @@ const HotelFoodsSection = () => {
                         }`}
                       />
                     ))}
-                    <span className="text-white ml-2 text-sm">{item.rating}</span>
+                    <span className="text-white ml-2 text-sm">
+                      {item.rating}
+                    </span>
                   </div>
-                  
+
                   {/* Order button */}
-                  <button 
-                    className="bg-white text-red-600 font-semibold py-2 px-6 rounded-full text-sm transition-all duration-200 hover:bg-gray-100 hover:scale-105"
+                  <button
+                    className="bg-white cursor-pointer text-red-600 font-semibold py-2 px-6 rounded-full text-sm transition-all duration-200 hover:bg-gray-100 hover:scale-105"
                     onClick={(e) => {
                       e.stopPropagation();
                       // Handle order action here
                     }}
                   >
-                    Explore Avees Foods
+                    More Details
                   </button>
                 </div>
               </div>
@@ -267,7 +270,7 @@ const HotelFoodsSection = () => {
 
         {/* Call to Action */}
         <div className="text-center mt-16">
-          <button className="bg-red-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-200 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2">
+          <button className="bg-red-600 text-white font-bold py-4 px-8 rounded-full text-lg transition-colors duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2">
             View Full Menu
           </button>
         </div>
