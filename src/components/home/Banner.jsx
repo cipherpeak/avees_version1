@@ -24,11 +24,11 @@ const FeatureItem = ({ icon: Icon, title, description }) => (
 
 function Banner() {
   const featureItems = [
-    { icon: Globe, title: "Worldwide Delicacies", description: "Savor global flavors at your table" },
-    { icon: Truck, title: "Expedited Shipping", description: "Enjoy swift 24-hour delivery across India" },
-    { icon: ShoppingBag, title: "Extensive Selection", description: "Choose from over 1,500 premium products" },
-    { icon: Tag, title: "Exclusive Offers", description: "Discover exceptional deals on gourmet items" },
-    { icon: Wheat, title: "Premium Quality", description: "Only the finest ingredients for you" },
+    { icon: Wheat, title: "Authentic Kerala Foods", description: "From puttu podi to palappam batter, all your favorites in one place" },
+    { icon: ShoppingBag, title: "Easy Online Shopping", description: "Order your essentials in just a few clicks" },
+    { icon: Truck, title: "Fast Home Delivery", description: "Fresh products delivered quickly to your doorstep" },
+    { icon: Tag, title: "Best Prices & Offers", description: "Enjoy great value on Avees products every day" },
+    { icon: Globe, title: "Trusted Quality", description: "Made with care, loved across Kerala and beyond" },
   ];
 
   const duplicatedItems = [...featureItems, ...featureItems];

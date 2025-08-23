@@ -2,11 +2,11 @@ import { PlaceholdersAndVanishInput } from "../ui/placeholders-and-vanish-input"
 
 export function PlaceholdersAndVanishInputDemo() {
   const placeholders = [
-    "What's the first rule of Fight Club?",
-    "Who is Tyler Durden?",
-    "Where is Andrew Laeddis Hiding?",
-    "Write a Javascript method to reverse a string",
-    "How to assemble your own PC?",
+    "Search for Puttu Podi",
+    "Find Palappam Batter",
+    "Explore Avees Masalas",
+    "Buy Idli & Dosa Batter",
+    "Discover Avees Snacks",
   ];
 
   const handleChange = (e) => {
@@ -17,8 +17,12 @@ export function PlaceholdersAndVanishInputDemo() {
     console.log("submitted");
   };
   return (
-    <div className="flex flex-col justify-center  items-center">
-      <PlaceholdersAndVanishInput placeholders={placeholders} onChange={handleChange} onSubmit={onSubmit} />
+    <div className="flex flex-col justify-center items-center">
+      <PlaceholdersAndVanishInput
+        placeholders={placeholders}
+        onChange={handleChange}
+        onSubmit={onSubmit}
+      />
     </div>
   );
 }
