@@ -136,36 +136,23 @@ export default function AdsVideos() {
             }}
           >
             <div className="relative w-full aspect-[9/16] overflow-hidden">
-              {/* Video element with controls and auto-play */}
-              <video
-                className="absolute inset-0 w-full h-full object-cover"
-                poster={product.videoPoster}
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-              >
-                <source src={product.videoSrc} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-              
-              {/* Optional: Add a play button overlay for better UX */}
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                <div className="bg-black bg-opacity-40 rounded-full p-2">
-                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-              </div>
+            <video
+              className="absolute inset-0 w-full h-full object-cover"
+              poster={product.videoPoster}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              controls={false} // explicitly prevent controls
+              disablePictureInPicture // blocks PiP icon
+              controlsList="nodownload nofullscreen noremoteplayback" // prevent download/fullscreen icons
+            >
+              <source src={product.videoSrc} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
             </div>
-            
-            {/* Product info overlay (if needed) */}
-            {product.overlayTitle && (
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4 text-white">
-                <h3 className="font-bold text-lg">{product.overlayTitle}</h3>
-              </div>
-            )}
+          
           </motion.div>
         ))}
       </motion.div>

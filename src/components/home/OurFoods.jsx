@@ -5,8 +5,7 @@ import food2 from "../../assets/foods/RAH03836-min.JPG";
 import food3 from "../../assets/foods/RAH03850-min.JPG";
 import food4 from "../../assets/foods/RAH03857-min.JPG";
 import aveesLogo from "../../assets/logo/Avees main logo.png";
-import { TextHoverEffect } from "../ui/text-hover-effect";
-import { Star } from "lucide-react"; // Import star icon for ratings
+import { Star } from "lucide-react"; 
 
 const HotelFoodsSection = () => {
   const sectionRef = useRef(null);
@@ -258,7 +257,7 @@ const HotelFoodsSection = () => {
                       // Handle order action here
                     }}
                   >
-                    Order Now
+                    Explore Avees Foods
                   </button>
                 </div>
               </div>

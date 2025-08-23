@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import video1 from "../../assets/batters/avees red.mp4";
+import video1 from "../../assets/batters/avees red_1.mp4";
 import video2 from "../../assets/batters/avees yellow.mp4";
 import video3 from "../../assets/batters/Comp 1 (1).mp4";
 import { TextHoverEffect } from "../ui/text-hover-effect";
@@ -71,7 +71,7 @@ export default function BatterSec() {
 
   return (
     <section ref={sectionRef} className="bg-gradient-to-b from-white to-amber-50 py-16 px-4 md:py-24 lg:py-28 overflow-hidden">
-      <div className="container mx-auto max-w-6xl">
+      <div className="container mx-auto max-w-7xl">
         {/* Header Section */}
         <motion.div 
           className="text-center mb-12 md:mb-16 lg:mb-20"
@@ -94,7 +94,7 @@ export default function BatterSec() {
         </motion.div>
 
         {/* Video Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-20">
           {features.map((feature, index) => (
             <motion.div 
               key={index} 
@@ -107,11 +107,11 @@ export default function BatterSec() {
               onFocus={() => setActiveIndex(index)}
             >
               {/* Video Container with Hover Effect */}
-              <div className="w-full aspect-square max-w-md relative rounded-2xl overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-500">
+              <div className="w-full md:aspect-[9/12] aspect-[9/10]  md:max-w-2xl max-w-xl relative rounded-2xl overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-500">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
                 
                 <video 
-                  className="w-full h-full object-cover absolute top-0 left-0 transform group-hover:scale-105 transition-transform duration-700" 
+                  className="w-full h-full object-cover absolute top-0 left-0 transform group-hover:scale-105 transition-transform duration-700 " 
                   autoPlay
                   muted
                   loop

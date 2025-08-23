@@ -170,7 +170,7 @@ function Header() {
           <img
             src={logo}
             alt="Avees Logo"
-            className="md:h-12 h-11 w-auto rounded-full scale-150"
+            className="md:h-16 h-11 w-auto rounded-full scale-150"
           />
         </div>
 
@@ -179,13 +179,16 @@ function Header() {
           <PlaceholdersAndVanishInputDemo />
         </div>
 
-        {/* Sale Tag */}
-        <div className="relative">
-          <div className="flex items-center gap-2 bg-red-50 text-red-600 px-3 py-1.5 rounded-full text-sm font-medium">
+        <div className="relative cursor-pointer">
+          <a 
+            href="https://www.amazon.in/stores/ArayacherrilVarkeySonsPrivateLimited/page/845DC96C-907A-4AD1-AC9D-AA2AF5129460?is_byline_deeplink=true&deeplink=CB166B1D-3A54-48AA-B41E-03CBD177798D&redirect_store_id=845DC96C-907A-4AD1-AC9D-AA2AF5129460&lp_asin=B09R7WRRT2&ref_=ast_bln&store_ref=bl_ast_dp_brandLogo_sto" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 bg-red-50 text-red-600 px-3 py-1.5 rounded-full text-sm font-medium hover:bg-red-100 transition"
+          >
             <IoMdPricetags className="text-red-500 text-xl" />
-            <span className="hidden sm:inline">On Sale</span>
-          </div>
-          {/* <span className="absolute -top-1 -right-1 h-3 w-3 rounded-full bg-red-500"></span> */}
+            <span className="hidden sm:inline">Order Now</span>
+          </a>
         </div>
       </div>
 
