@@ -3,7 +3,7 @@ import { useState } from "react";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { PlaceholdersAndVanishInputDemo } from "../../components/header/Search";
 import { motion, AnimatePresence } from "framer-motion";
-import { IoMdPricetags } from "react-icons/io";
+import { GiShoppingBag } from "react-icons/gi";
 import { FiMenu, FiX } from "react-icons/fi";
 
 
@@ -160,7 +160,7 @@ function Header() {
       {/* Top Bar */}
       <div className="flex items-center justify-between max-w-7xl mx-auto px-4 py-3">
         {/* Logo and Mobile Menu Button */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 ">
           <button 
             className="md:hidden text-gray-700"
             // onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -179,14 +179,14 @@ function Header() {
           <PlaceholdersAndVanishInputDemo />
         </div>
 
-        <div className="relative cursor-pointer">
+        <div className="relative cursor-pointer ">
           <a 
             href="https://www.amazon.in/stores/ArayacherrilVarkeySonsPrivateLimited/page/845DC96C-907A-4AD1-AC9D-AA2AF5129460?is_byline_deeplink=true&deeplink=CB166B1D-3A54-48AA-B41E-03CBD177798D&redirect_store_id=845DC96C-907A-4AD1-AC9D-AA2AF5129460&lp_asin=B09R7WRRT2&ref_=ast_bln&store_ref=bl_ast_dp_brandLogo_sto" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-red-50 text-red-600 px-3 py-1.5 rounded-full text-sm font-medium hover:bg-red-100 transition"
+            className="flex items-center gap-2 bg-red-100 text-red-600 px-4 py-2.5 rounded-full text-sm font-medium transition"
           >
-            <IoMdPricetags className="text-red-500 text-xl" />
+            <GiShoppingBag className="text-red-500 text-xl" />
             <span className="hidden sm:inline">Order Now</span>
           </a>
         </div>

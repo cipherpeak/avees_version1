@@ -111,12 +111,12 @@ export default function BatterSec() {
               onMouseEnter={() => setActiveIndex(index)}
               onFocus={() => setActiveIndex(index)}
             >
-              {/* Video Container with Hover Effect */}
-              <div className="w-full md:aspect-[9/12] aspect-[9/10]  md:max-w-2xl max-w-xl relative rounded-2xl overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-500">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
+              {/* Video Container */}
+              <div className="w-full md:aspect-[9/12] aspect-[9/10] md:max-w-2xl max-w-xl relative rounded-2xl overflow-hidden shadow-lg group-hover:shadow-xl transition-all duration-500">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
 
                 <video
-                  className="w-full h-full object-cover absolute top-0 left-0 transform group-hover:scale-105 transition-transform duration-700 "
+                  className="w-full h-full object-cover absolute top-0 left-0 transform group-hover:scale-105 transition-transform duration-700"
                   autoPlay
                   muted
                   loop
@@ -126,18 +126,16 @@ export default function BatterSec() {
                   Your browser does not support the video tag.
                 </video>
 
-                {/* Overlay Content */}
-                <div className="absolute bottom-0 left-0 right-0 p-5 text-white z-20 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                  <h3 className="text-xl md:text-2xl font-bold mb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                {/* Overlay Content - Always Visible */}
+                <div className="absolute bottom-0 left-0 right-0 p-5 text-white z-20">
+                  <h3 className="text-xl md:text-2xl font-bold mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-sm md:text-base opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                  <p className="text-sm md:text-base opacity-90">
                     {feature.description}
                   </p>
                 </div>
               </div>
-
-
             </motion.div>
           ))}
         </div>

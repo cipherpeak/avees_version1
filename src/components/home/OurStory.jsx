@@ -209,14 +209,14 @@ function OurStory() {
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-4 sm:mb-6 md:mb-8 text-left leading-relaxed">
             {isMobile ? (
               <>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis cumque, harum quas soluta expedita fuga labore excepturi tenetur provident corporis odit aspernatur.
+                Founded in 1994 by A.V. George in Pulincunnoo, Kuttanad, Arayacherril Varkey & Sons Pvt Ltd began as a humble rice flour mill, deeply rooted in preserving the authentic taste and heritage of traditional Kuttanadan rice products.
               </>
             ) : (
               <>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda sit officia eveniet eaque facilis. Rem unde et sint quaerat soluta? Debitis perferendis quos ratione quibusdam voluptatibus, tempore expedita labore minima. Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Guided by a passion for quality and community, this family-owned business has grown into a thriving food and hospitality group that honors its roots while innovating for the future. From the fertile fields of Kuttanad to kitchens across the world, we carry the soul of Kerala's culinary heritage.
               </>
             )}
-            Avees is a passionate team dedicated to creating innovative solutions that
+           
           </p>
 
           <motion.button 
