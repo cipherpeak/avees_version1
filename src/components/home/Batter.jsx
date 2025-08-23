@@ -84,7 +84,7 @@ export default function BatterSec() {
           </div>
           
           <motion.p
-            className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed -mt-9 px-4 md:px-0"
+            className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed -mt-9 px-4 "
             variants={descriptionVariants}
           >
             Experience our chef's signature batters crafted with the finest ingredients 

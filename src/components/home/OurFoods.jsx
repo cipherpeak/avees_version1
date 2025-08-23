@@ -6,6 +6,7 @@ import food3 from "../../assets/foods/RAH03850-min.JPG";
 import food4 from "../../assets/foods/RAH03857-min.JPG";
 import aveesLogo from "../../assets/logo/Avees main logo.png";
 import { TextHoverEffect } from "../ui/text-hover-effect";
+import { Star } from "lucide-react"; // Import star icon for ratings
 
 const HotelFoodsSection = () => {
   const sectionRef = useRef(null);
@@ -17,21 +18,29 @@ const HotelFoodsSection = () => {
       id: 1,
       name: "Grilled Salmon Fillet",
       image: food4,
+      rating: 4.8,
+      description: "Fresh salmon with herbs and lemon butter sauce"
     },
     {
       id: 2,
       name: "Beef Wellington",
       image: food1,
+      rating: 4.9,
+      description: "Prime beef tenderloin wrapped in puff pastry"
     },
     {
       id: 3,
       name: "Lobster Thermidor",
       image: food2,
+      rating: 4.7,
+      description: "Lobster cooked in a rich cream sauce with cheese"
     },
     {
       id: 4,
       name: "Truffle Risotto",
       image: food3,
+      rating: 4.6,
+      description: "Creamy arborio rice with black truffle and parmesan"
     },
   ];
 
@@ -202,20 +211,55 @@ const HotelFoodsSection = () => {
                     alt={item.name}
                     className="w-full h-full object-cover"
                   />
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                    <h3 className="text-white font-bold text-lg">{item.name}</h3>
+                  </div>
                 </div>
 
-                {/* Back of card - Red background with name and logo */}
+                {/* Back of card - Red background with name, logo, rating and button */}
                 <div className="food-card-back absolute inset-0 backface-hidden bg-red-600 flex flex-col items-center justify-center p-4 rotate-y-180">
-                  <div className="absolute top-2 right-2 w-10 h-10">
+                  <div className="absolute md:top-4 top-0 left-0 md:left-4 w-12 h-12">
                     <img
                       src={aveesLogo || "/placeholder.svg"}
                       alt="Avees Logo"
                       className="w-full h-full object-contain"
                     />
                   </div>
-                  <h3 className="text-2xl font-bold text-white text-center font-sans">
+                  
+                  <h3 className="text-2xl font-bold text-white text-center font-sans mb-2">
                     {item.name}
                   </h3>
+                  
+                  <p className="text-white text-center text-sm mb-4">
+                    {item.description}
+                  </p>
+                  
+                  {/* Rating display */}
+                  <div className="flex items-center mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star
+                        key={i}
+                        size={16}
+                        className={`${
+                          i < Math.floor(item.rating)
+                            ? "text-yellow-400 fill-yellow-400"
+                            : "text-white"
+                        }`}
+                      />
+                    ))}
+                    <span className="text-white ml-2 text-sm">{item.rating}</span>
+                  </div>
+                  
+                  {/* Order button */}
+                  <button 
+                    className="bg-white text-red-600 font-semibold py-2 px-6 rounded-full text-sm transition-all duration-200 hover:bg-gray-100 hover:scale-105"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      // Handle order action here
+                    }}
+                  >
+                    Order Now
+                  </button>
                 </div>
               </div>
             </motion.div>
@@ -229,6 +273,19 @@ const HotelFoodsSection = () => {
           </button>
         </div>
       </div>
+
+      {/* Add CSS for flip animation */}
+      <style jsx>{`
+        .food-card-inner {
+          transform-style: preserve-3d;
+        }
+        .rotate-y-180 {
+          transform: rotateY(180deg);
+        }
+        .backface-hidden {
+          backface-visibility: hidden;
+        }
+      `}</style>
     </motion.section>
   );
 };
